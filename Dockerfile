@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Itemx Mizusaka <itemx@i3x.tw>
 
-#ENV COOKIE="Fill_it_here_or_change_cookie.txt_later"
-#ENV UA="Should_be_the_same_as_your_browser"
+ENV COOKIE="Fill_it_here_or_change_cookie.txt_later"
+ENV UA="Should_be_the_same_as_your_browser"
 ENV ROOTPATH="/aniGamer"
 ENV DOWNLADPATH=${ROOTPATH}"/Download"
 ENV COREPATH=${ROOTPATH}"/Core"
