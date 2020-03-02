@@ -5,7 +5,7 @@ MAINTAINER Itemx Mizusaka <itemx@i3x.tw>
 ENV COOKIE="Fill_it_here_or_change_cookie.txt_later"
 ENV UA="Should_be_the_same_as_your_browser"
 ENV ROOTPATH="/aniGamer"
-ENV DOWNLADPATH=${ROOTPATH}"/Download"
+ENV DOWNLOADPATH=${ROOTPATH}"/Download"
 ENV COREPATH=${ROOTPATH}"/Core"
 
 
@@ -29,6 +29,7 @@ WORKDIR ${ROOTPATH}
 COPY run.sh ${ROOTPATH}
 RUN chmod +x run.sh
 
-VOLUME [ ${DOWNLADPATH}, ${COREPATH} ]
+VOLUME ${DOWNLOADPATH}
+VOLUME ${COREPATH}
 
 CMD ["./run.sh"]
