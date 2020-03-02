@@ -1,3 +1,4 @@
+
 # aniGamer-docker
 Chinese should be provided later when the steps are verified working. No ETA for that anyway.
 
@@ -28,6 +29,8 @@ Then execute the docker with below parameters
         -e COOKIE="YOUR_COOKIE" \
         -d \
         itemx/anigamer
+        
+
 ### Parameters
 
  - `--name <NAME>` 
@@ -38,7 +41,10 @@ Then execute the docker with below parameters
    
  - `-v /your/local/folder/downloaded:/aniGamer/Download`
    The folder is used to store the animations downloaded from the website.
-**Note**: **DO NOT** set these folder to same folder. Otherwise the execution result might be strange.
+   
+**Note**:
+
+**DO NOT** set these folder to same folder. Otherwise the execution result might be strange.
 
 Above folders will be created automatically. And the permission will be set to 777 to prevent unexpected troubles.
 
@@ -54,31 +60,37 @@ Above folders will be created automatically. And the permission will be set to 7
 ## Installation (On a QNAP NAS UI)
 
 Login the QNAP NAS via SSH and copy-paste the command in above is much faster then using the UI. Below step are still provided as reference.
+
 **Note:**
-- Install Container Station is a must have step before using CLI.
-- The visible folder (Shared folder) of the NAS is under `/share/` folder. Rememer to add it in front of the folder you know.
+ - Install Container Station is a must have step before using CLI.
+ - The visible folder (Shared folder) of the NAS is under `/share/` folder. Rememer to add it in front of the folder you know.
 	- For example, if the content is planned to put at `/Public` then it should be `/share/Public` in the CLI.
 	- Just select `/Public` when setting from Container Station UI.
 
- 1. On QNAP NAS, the docker is managed by "Container Station" and it can be installed from the NAS's AppCenter. [Check here for details](https://www.qnap.com/en/how-to/tutorial/article/how-to-use-container-station) on how to initial the Container Station
+ - On QNAP NAS, the docker is managed by "Container Station" and it can be installed from the NAS's AppCenter. [Check here for details](https://www.qnap.com/en/how-to/tutorial/article/how-to-use-container-station) on how to initial the Container Station
 
- 2. The Container Station will looks like this. And you can "Create" a new one.
+ - The Container Station will looks like this. And you can "Create" a new one.
 ![ContainerStation UI](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container1.png)
 
- 3. After pressing "Create," a list of availiable container will appear. And it is already integrate with dockerhub. Simply search "itemx" or "anigamer" can locate this package for installation. ![Search "itemx/anigamer"](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container2.png)Press "Install" will download the container to the local storage and creates an docker based on it.
- 4. Adjust the resource limitation and then press Advanced settings![Create settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container3.png) 
- 5. Change the UA and the COOKIE![UA COOKIE settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install1.png)Press "Add" and create` UA` and `COOKIE` entries with proper value.
+ - After pressing "Create," a list of availiable container will appear. And it is already integrate with dockerhub. Simply search "itemx" or "anigamer" can locate this package for installation. ![Search "itemx/anigamer"](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container2.png)Press "Install" will download the container to the local storage and creates an docker based on it.
+ - Adjust the resource limitation and then press Advanced settings![Create settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container3.png) 
+ - Change the UA and the COOKIE![UA COOKIE settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install1.png)Press "Add" and create` UA` and `COOKIE` entries with proper value.
  
 | Name | Value |
 |---|---|
 | COOKIE | The Cookie Value inspected from browser |
 | UA | The UserAgnet |
  The method to obtain a proper User Agent of your browser and the COOKIE can be found at the document provided in aniGamerPlus. 
-	 - [Find the COOKIE](https://github.com/miyouzi/aniGamerPlus#cookietxt)
-	 - [Find the User Agent](https://github.com/miyouzi/aniGamerPlus#%E4%BD%BF%E7%94%A8chrome%E8%88%89%E4%BE%8B%E5%A6%82%E4%BD%95%E7%8D%B2%E5%8F%96-ua)
-		 - Or from here directly: https://developers.whatismybrowser.com/useragents/parse/?analyse-my-user-agent=yes
+
+- [Find the COOKIE](https://github.com/miyouzi/aniGamerPlus#cookietxt)
+- [Find the User Agent](https://github.com/miyouzi/aniGamerPlus#%E4%BD%BF%E7%94%A8chrome%E8%88%89%E4%BE%8B%E5%A6%82%E4%BD%95%E7%8D%B2%E5%8F%96-ua)
+	- Or from here directly:
+		- https://developers.whatismybrowser.com/useragents/parse/?analyse-my-user-agent=yes
+
 6. Switch to `Shared Folders` tab. Add two Volume from host.
 ![UA COOKIE settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install2.png)
+
+
 | Volume from host | Mount Point |
 |--|--|
 | The share folder you want to put core files. | /aniGamer/Core |
