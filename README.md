@@ -1,4 +1,5 @@
 
+
 # aniGamer-docker
 Chinese should be provided later when the steps are verified working. No ETA for that anyway.
 
@@ -70,17 +71,17 @@ Login the QNAP NAS via SSH and copy-paste the command in above is much faster th
  - On QNAP NAS, the docker is managed by "Container Station" and it can be installed from the NAS's AppCenter. [Check here for details](https://www.qnap.com/en/how-to/tutorial/article/how-to-use-container-station) on how to initiate the Container Station
 
  1. The Container Station will look like this. And you can "Create" a new one.
-![ContainerStation UI](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container1.png)
+![ContainerStation UI](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container1.png)
 
  2. After pressing "Create," a list of available containers will appear. And it is already integrated with the docker hub. Simply search "itemx" or "anigamer" can locate this package for installation.
-![Search "itemx/anigamer"](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container2.png)
+![Search "itemx/anigamer"](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container2.png)
 Press "Install" will download the container to the local storage and creates a docker based on it.
 
- 3. Adjust the resource limitation and then press Advanced settings![Create settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container3.png) 
+ 3. Adjust the resource limitation and then press Advanced settings![Create settings](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container3.png) 
 
  4. Change the UA and the COOKIE
  
- ![UA COOKIE settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install1.png)
+ ![UA COOKIE settings](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container_install1.png)
  Press "Add" and create` UA` and `COOKIE` entries with the proper value.
  
  | Name | Value |
@@ -96,7 +97,7 @@ Press "Install" will download the container to the local storage and creates a d
 
 5. Switch to the `Shared Folders` tab. Add two Volume from the host.
 
-![UA COOKIE settings](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install2.png)
+![UA COOKIE settings](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container_install2.png)
 
 
 | Volume from host | Mount Point |
@@ -110,8 +111,8 @@ Press "Install" will download the container to the local storage and creates a d
 6. After everything is set, press `Create` and then proceed. 
 
 7. The docker image will be downloaded and enabled after the download finishes. 
-![Docker list](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install4.png)
-![Details](https://raw.githubusercontent.com/itemx/anigamer-docker/master/readme_pic/qn_container_install5.png)
+![Docker list](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container4.png)
+![Details](https://github.com/itemx/anigamer-docker/raw/master/readme_pic/qn_container5.png)
 
 If the output contains `aniGamer docker is running.` like above means it's ready to use. You can add animation id into `sn_list.txt` following [the instructions](https://github.com/miyouzi/aniGamerPlus#sn_listtxt).
 
