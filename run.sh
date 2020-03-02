@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -d "${DOWNLADPATH}" ]; then
+if [ ! -d "${DOWNLOADPATH}" ]; then
 	echo "Creating Download folder."
-	mkdir -p "${DOWNLADPATH}"
+	mkdir -p "${DOWNLOADPATH}"
 fi
 
 if [ ! -d "${COREPATH}" ]; then
@@ -18,7 +18,7 @@ if [ ! -f "${COREPATH}"/aniGamerPlus.py ]; then
 fi
 
 chmod -R 777 "${COREPATH}"
-chmod -R 777 "${DOWNLADPATH}"
+chmod -R 777 "${DOWNLOADPATH}"
 
 echo ""
 echo "Check for git updates."
@@ -61,7 +61,7 @@ if [ ! -f "${COREPATH}"/config.json ]; then
 	echo "  Replacing the config file for UA and bangumi_dir."
 	cp "${COREPATH}"/config-sample.json "${COREPATH}"/config.json
 	sed -i -E 's|"ua": "(.*)",|"ua": "'"${UA}"'",|g' "${COREPATH}"/config.json
-	sed -i -E 's|"bangumi_dir": "(.*)",|"bangumi_dir": "'"${DOWNLADPATH}"'",|g' "${COREPATH}"/config.json
+	sed -i -E 's|"bangumi_dir": "(.*)",|"bangumi_dir": "'"${DOWNLOADPATH}"'",|g' "${COREPATH}"/config.json
 fi
 
 echo ""
