@@ -27,11 +27,11 @@ git pull https://github.com/miyouzi/aniGamerPlus.git
 echo ""
 
 # Set a default value from the original json
-if [[ -z "${UA}" ]]; then
+if [[ -z "${UA}" || "${UA}" = "Should_be_the_same_as_your_browser" ]]; then
 		echo ""
 		echo "=================================================================="
-		echo "  You didn't provide -v UA=xxx while run docker."
-		echo "  Using default value for User Agent."
+		echo "  You didn't provide -v UA=xxx while run docker or doesn't change"
+		echo "  Default value from dockerhub. Using default value for UserAgent."
 		echo "  UA should be the same browser that the COOKIE is created."
 		echo "=================================================================="
 		echo ""
@@ -41,7 +41,7 @@ fi
 
 # Fill the cookie however. If the cookie exists do nothing.
 if [ ! -f "${COREPATH}"/cookie.txt ]; then
-	if [[ -z "${COOKIE}" ]]; then
+	if [[ -z "${COOKIE}" || "${COOKIE}" = "Fill_it_here_or_change_cookie.txt_later" ]]; then
 		echo ""
 		echo "=================================================================="
 		echo "  You didn't provide -v COOKIE=xxx while run docker."
