@@ -1,21 +1,25 @@
 
 
 # aniGamer-docker
+
 Chinese should be provided later when the steps are verified working. No ETA for that anyway.
 
 The aniGamer-docker is a containerized image for aniGamerPlus written by miyouzi. Its project page can be found here:
 > https://github.com/miyouzi/aniGamerPlus
 
 The purpose to create this docker is the provide an easier method to deploy aniGamerPlus on a NAS environment. The direct command-line download mode is not supported for the moment and does not have firm schedules, depending on the needs or the status of the updates from aniGamerPlus.
+
 ## Basic components
-Base: ubuntu:18.04
-Apt packages installed: locales git ffmpeg python3-pip
-Pip packages installed: requests beautifulsoup4 lxml termcolor chardet pysocks
+
+- Base: ubuntu:18.04
+- Apt packages installed: locales git ffmpeg python3-pip
+- Pip packages installed: requests beautifulsoup4 lxml termcolor chardet pysocks
 
 It is planned to use other bases to replace current ubuntu 18.04, but will need more time to perform tests to confirm if the environment is working. That is a low priority task.
 Due to the nature of docker, the time inside is always UTC.
 
 ## Installation (General docker method)
+
 Under a system which supports docker, run below commands at the CLI
 
     docker pull itemx/anigamer:latest
